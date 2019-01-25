@@ -8,7 +8,6 @@
 
 namespace LambdaPHPRuntime;
 
-
 class Bootstrap
 {
     private $runtime;
