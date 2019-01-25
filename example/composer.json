@@ -1,0 +1,5 @@
+{
+    "require": {
+        "asahasrabuddhe/lambda-php-runtime-bootstrap": "~0.1"
+    }
+}

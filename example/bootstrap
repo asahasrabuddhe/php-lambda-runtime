@@ -1,0 +1,14 @@
+#!/opt/bin/php
+<?php
+
+use LambdaPHPRuntime\Bootstrap;
+
+require __DIR__ . '/vendor/autoload.php';
+
+$bootstrap = new Bootstrap();
+
+for (; ;) {
+    $bootstrap->initialize();
+
+    $bootstrap->process();
+}
