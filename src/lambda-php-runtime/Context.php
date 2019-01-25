@@ -41,23 +41,23 @@ class Context
 
     public function __construct(array $request)
     {
-        $this->awsRequestId = $response['invocationId'];
-        $this->invokedFunctionArn = $response['invokedFunctionArn'];
+        $this->awsRequestId = $request['invocationId'];
+        $this->invokedFunctionArn = $request['invokedFunctionArn'];
         $this->logGroupName = $_ENV['AWS_LAMBDA_LOG_GROUP_NAME'];
         $this->logStreamName = $_ENV['AWS_LAMBDA_LOG_STREAM_NAME'];
         $this->functionName = $_ENV['AWS_LAMBDA_FUNCTION_NAME'];
         $this->functionVersion = $_ENV['AWS_LAMBDA_FUNCTION_VERSION'];
         $this->memoryLimitInMB = $_ENV['AWS_LAMBDA_FUNCTION_MEMORY_SIZE'];
 
-        if (isset($response['clientContext']) && $response['clientContext'] != '') {
-            $this->clientContext = json_decode($response['clientContext']);
+        if (isset($request['clientContext']) && $request['clientContext'] != '') {
+            $this->clientContext = json_decode($request['clientContext']);
         }
 
-        if (isset($response['identity']) && $response['identity'] != '') {
-            $this->identity = json_decode($response['identity']);
+        if (isset($request['identity']) && $request['identity'] != '') {
+            $this->identity = json_decode($request['identity']);
         }
 
-        $this->deadlineMs = floatval($response['deadlineMs']);
+        $this->deadlineMs = floatval($request['deadlineMs']);
     }
 
     /**
