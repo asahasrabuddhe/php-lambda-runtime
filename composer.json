@@ -1,0 +1,15 @@
+{
+    "name": "asahasrabuddhe/lambda-php-runtime-bootstrap",
+    "description": "Spec compliant PHP Runtime for AWS",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ajitem Sahasrabuddhe",
+            "email": "me@ajitem.com"
+        }
+    ]
+}

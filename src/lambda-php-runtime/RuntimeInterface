@@ -1,0 +1,13 @@
+<?php
+
+namespace LambdaPHPRuntime;
+
+interface RuntimeInterface {
+    public function nextInvocation(): array;
+
+    public function invocationResponse(string $awsRequestId, $response): void;
+
+    public function invocationError(string $awsRequestId, $response): void;
+
+    public function initError($error): void;
+}
