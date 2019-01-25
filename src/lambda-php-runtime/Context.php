@@ -37,6 +37,7 @@ class Context
     /** @var string */
     private $identity;
 
+    /** @var float  */
     private $deadlineMs;
 
     public function __construct(array $request)
@@ -51,13 +52,17 @@ class Context
 
         if (isset($request['clientContext']) && $request['clientContext'] != '') {
             $this->clientContext = json_decode($request['clientContext']);
+        } else {
+            $this->clientContext = '';
         }
 
         if (isset($request['identity']) && $request['identity'] != '') {
             $this->identity = json_decode($request['identity']);
+        } else {
+            $this->identity = '';
         }
 
-        $this->deadlineMs = floatval($request['deadlineMs']);
+        $this->deadlineMs = floatval($request['deadlineInMs']);
     }
 
     /**
@@ -132,6 +137,9 @@ class Context
         return $this->identity;
     }
 
+    /**
+     * @return float
+     */
     public function getRemainingTimeInMillis()
     {
         return $this->deadlineMs - round(microtime(true) * 1000);
