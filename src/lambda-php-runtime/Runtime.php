@@ -2,7 +2,7 @@
 
 namespace LambdaPHPRuntime;
 
-interface RuntimeInterface {
+interface Runtime {
     public function nextInvocation(): array;
 
     public function invocationResponse(string $awsRequestId, $response): void;

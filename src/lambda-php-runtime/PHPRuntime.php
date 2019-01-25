@@ -12,7 +12,7 @@ namespace LambdaPHPRuntime;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 
-class PHPRuntime implements RuntimeInterface
+class PHPRuntime implements Runtime
 {
     /** @var string */
     private $baseURL;
