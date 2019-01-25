@@ -13,8 +13,8 @@
     }
   ],
   "autoload": {
-    "psr-0": {
-      "LambdaPHPRuntime": "src/"
+    "psr-4": {
+      "LambdaPHPRuntime\\": "src/lambda-php-runtime/"
     }
   }
 }
